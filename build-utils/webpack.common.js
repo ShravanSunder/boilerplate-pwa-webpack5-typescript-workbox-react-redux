@@ -3,6 +3,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const fileExtensions = ['jpg', 'jpeg', 'png', 'gif', 'eot', 'otf', 'svg', 'ttf', 'woff', 'woff2'];
 
@@ -23,7 +24,7 @@ module.exports = {
          // },
          {
             test: /\.css$/,
-            use: ['style-loader', 'css-loader'],
+            use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
             exclude: /node_modules/,
          },
          {
@@ -45,6 +46,10 @@ module.exports = {
       new HtmlWebpackPlugin({
          title: 'Advanced React with Webpack Setup',
          template: path.resolve(__dirname, '..', './src/index.html'),
+      }),
+      new MiniCssExtractPlugin({
+         filename: 'tailwind.css',
+         chunkFilename: 'tailwind.css',
       }),
    ],
    output: {
