@@ -9,7 +9,8 @@
       "build:analyze": "npm run build -- --env addon=bundleanalyze",
       "test": "echo \"Error: no test specified\" && exit 0",
       "lint": "eslint 'src/*.{js,ts,tsx}' --quiet --fix",
-      "commit": "pretty-quick --staged --verbose && yarn run lint"
+      "lint:quiet": "eslint 'src/*.{js,ts,tsx}' --quiet --fix",
+      "commit": "pretty-quick --staged --verbose"
    },
    "keywords": [],
    "author": "Robin Wieruch <opensource@rwieruch.com> (https://www.robinwieruch.de)",
@@ -80,7 +81,8 @@
    },
    "husky": {
       "hooks": {
-         "pre-commit": "yarn run commit"
+         "pre-commit": "yarn run commit",
+         "post-commit": "yarn run lint:quiet"
       }
    }
 }
