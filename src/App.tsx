@@ -1,5 +1,8 @@
 import React from 'react';
-import './tailwind.generated.css';
+import './css/tailwind-base.css';
+import './css/tailwind-components.css';
+import './css/tailwind-utilities.css';
+// import './tailwind.generated.css';
 // import { Typography } from '@material-ui/core';
 
 const App = (): JSX.Element => (

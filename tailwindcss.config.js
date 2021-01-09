@@ -1,5 +1,5 @@
 module.exports = {
-   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html', './src/index.html'],
    presets: [],
    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/aspect-ratio'), require('@tailwindcss/typography'), require('tailwindcss-children')],
    darkMode: false, // or 'media' or 'class'

@@ -11,20 +11,19 @@ module.exports = {
    entry: path.resolve(__dirname, '..', './src/index.js'),
    module: {
       rules: [
-         // {
-         //    test: /\.tsx?$/,
-         //    use: 'ts-loader',
-         //    exclude: /node_modules/,
-         // },
-         // {
-         //    test: /\.(js|jsx)$/,
-         //    exclude: /node_modules/,
-         //    use: ['babel-loader'],
-         //    exclude: /node_modules/,
-         // },
          {
             test: /\.css$/,
-            use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+            use: [
+               //MiniCssExtractPlugin.loader,
+               {
+                  loader: 'style-loader',
+               },
+               { loader: 'css-loader', options: { importLoaders: 1 } },
+
+               {
+                  loader: 'postcss-loader',
+               },
+            ],
             exclude: /node_modules/,
          },
          {
@@ -47,10 +46,10 @@ module.exports = {
          title: 'Advanced React with Webpack Setup',
          template: path.resolve(__dirname, '..', './src/index.html'),
       }),
-      new MiniCssExtractPlugin({
-         filename: 'tailwind.css',
-         chunkFilename: 'tailwind.css',
-      }),
+      // new MiniCssExtractPlugin({
+      //    filename: 'tailwind.generated.css',
+      //    chunkFilename: 'tailwind.generated.css',
+      // }),
    ],
    output: {
       path: path.resolve(__dirname, '..', 'dist'),
