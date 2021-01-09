@@ -54,14 +54,5 @@ module.exports = {
    optimization: {
       runtimeChunk: 'single',
       moduleIds: 'deterministic',
-      splitChunks: {
-         cacheGroups: {
-            vendor: {
-               test: /[\\/]node_modules[\\/]/,
-               name: 'vendors',
-               chunks: 'all',
-            },
-         },
-      },
    },
 };

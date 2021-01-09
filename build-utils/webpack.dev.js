@@ -2,9 +2,20 @@ const path = require('path');
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
    mode: 'development',
+   cache: {
+      type: 'memory',
+      // type: 'filesystem',
+      //  cacheLocation: path.resolve(__dirname, '.test_cache')
+      // buildDependencies: {
+      //    // This makes all dependencies of this file - build dependencies
+      //    config: [__filename],
+      //    // By default webpack and loaders are build dependencies
+      // },
+   },
    plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new Dotenv({
@@ -14,6 +25,11 @@ module.exports = {
          exclude: ['vendor.js'],
       }),
       new ReactRefreshWebpackPlugin(),
+      new ForkTsCheckerWebpackPlugin({
+         eslint: {
+            files: './src/**/*.{ts,tsx,js,jsx}',
+         },
+      }),
    ],
    devServer: {
       contentBase: path.resolve(__dirname, '..', './dist'),
@@ -31,6 +47,7 @@ module.exports = {
                {
                   loader: require.resolve('babel-loader'),
                   options: {
+                     cacheDirectory: true,
                      // ... other options
                      plugins: [
                         // ... other plugins
@@ -38,8 +55,16 @@ module.exports = {
                      ].filter(Boolean),
                   },
                },
+               {
+                  loader: 'ts-loader',
+                  options: { transpileOnly: true },
+               },
             ],
          },
       ],
+   },
+   optimization: {
+      minimize: false,
+      chunkIds: 'named',
    },
 };

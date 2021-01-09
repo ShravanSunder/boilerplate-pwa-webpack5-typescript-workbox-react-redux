@@ -2,7 +2,7 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 
-const App = () => (
+const App = (): JSX.Element => (
    <div>
       <Typography variant="h1">This is a demo</Typography>
    </div>
