@@ -6,5 +6,5 @@
    "jsxBracketSameLine": true,
    "tabWidth": 3,
    "printWidth": 160,
-   "endOfLine": "auto"
+   "endOfLine": "lf"
 }
