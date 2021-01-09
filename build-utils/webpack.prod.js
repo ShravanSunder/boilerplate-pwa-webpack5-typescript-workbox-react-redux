@@ -17,11 +17,11 @@ module.exports = {
          {
             test: /\.(js|jsx|)$/,
             use: ['babel-loader'],
-            exclude: /node_modules/,
+            exclude: [/node_modules/, /\.test\.tsx?$/, /\.stories\.tsx?$/],
          },
          {
             test: /\.(ts|tsx)$/,
-            exclude: /node_modules/,
+            exclude: [/node_modules/, /\.test\.tsx?$/, /\.stories\.tsx?$/],
             use: ['ts-loader'],
             options: { transpileOnly: true },
          },

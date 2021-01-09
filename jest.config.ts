@@ -173,6 +173,7 @@ export default {
    transform: {
       '^.+\\.jsx?$': 'babel-jest',
       '^.+\\.tsx?$': 'ts-jest',
+      '^.+\\.mdx?$': '@storybook/addon-docs/jest-transform-mdx',
    },
 
    // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation

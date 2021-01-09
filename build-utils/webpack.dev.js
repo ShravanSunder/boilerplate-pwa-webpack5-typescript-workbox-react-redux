@@ -38,12 +38,10 @@ module.exports = {
    devtool: 'eval-source-map',
    module: {
       rules: [
-         // ... other rules
          {
             test: /\.[tj]sx?$/,
-            exclude: /node_modules/,
+            exclude: [/node_modules/, /\.test\.[tj]sx?$/, /\.stories\.tsx?$/],
             use: [
-               // ... other loaders
                {
                   loader: require.resolve('babel-loader'),
                   options: {

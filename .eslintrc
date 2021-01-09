@@ -33,14 +33,15 @@
    "rules": {
       "prettier/prettier": ["off"],
       "react/jsx-filename-extension": 0,
+      "react/jsx-indent": 0,
+      "react/require-default-props": "off",
       "@typescript-eslint/ban-ts-comment": "off",
       "@typescript-eslint/no-empty-function": "warn",
-      "no-use-before-define": "off",
+      "@typescript-eslint/no-unused-vars": "warn",
       "@typescript-eslint/no-use-before-define": ["error"],
       "import/extensions": 0,
       "import/no-unresolved": 0,
-      "@typescript-eslint/no-unused-vars": "warn",
-      "react/jsx-indent": 0,
+      "import/prefer-default-export": 0,
       "import/no-extraneous-dependencies": [
          "error",
          {
@@ -50,7 +51,8 @@
          }
       ],
       "sort-keys": "off",
-      "react/require-default-props": "off"
+      "no-use-before-define": "off",
+      "indent": ["off", 3]
    },
    "settings": {
       "react": {

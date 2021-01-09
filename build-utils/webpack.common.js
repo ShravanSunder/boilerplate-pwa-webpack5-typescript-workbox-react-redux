@@ -41,7 +41,7 @@ module.exports = {
       new ESLintPlugin(),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-         title: 'Advanced React with Webpack Setup',
+         title: 'Boilerplate',
          template: path.resolve(__dirname, '..', './src/index.html'),
       }),
    ],
