@@ -70,5 +70,5 @@
       "types": ["jest"]
    },
    "exclude": ["node_modules", "dist", "build", ".yarn", "build-utils"],
-   "include": ["./src", "./src/index.js"]
+   "include": ["./src", "./src/index.js", "serviceworker", "service-worker.js"]
 }

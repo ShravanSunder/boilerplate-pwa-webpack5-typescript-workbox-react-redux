@@ -51,8 +51,11 @@
          }
       ],
       "sort-keys": "off",
+      "comma-dangle": "off",
       "no-use-before-define": "off",
-      "indent": ["off", 3]
+      "spaced-comment": "warn",
+      "max-len": 0,
+      "indent": 0
    },
    "settings": {
       "react": {

@@ -5,14 +5,14 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const cache = {
-   type: 'memory',
-   // type: 'filesystem',
-   //  cacheLocation: path.resolve(__dirname, '.test_cache')
-   // buildDependencies: {
-   //    // This makes all dependencies of this file - build dependencies
-   //    config: [__filename],
-   //    // By default webpack and loaders are build dependencies
-   // },
+   //type: 'memory',
+   type: 'filesystem',
+   cacheLocation: path.resolve(__dirname, '.cache'),
+   buildDependencies: {
+      // This makes all dependencies of this file - build dependencies
+      config: [__filename],
+      // By default webpack and loaders are build dependencies
+   },
 };
 
 const moduleRules = [
