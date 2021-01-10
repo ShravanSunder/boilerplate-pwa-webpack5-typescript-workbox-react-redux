@@ -5263,7 +5263,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/webpack@npm:^4.4.31, @types/webpack@npm:^4.41.8":
+"@types/webpack@npm:^4.4.31, @types/webpack@npm:^4.41.25, @types/webpack@npm:^4.41.8":
   version: 4.41.25
   resolution: "@types/webpack@npm:4.41.25"
   dependencies:
@@ -7448,6 +7448,7 @@ __metadata:
     "@types/react-redux": ^7.1.15
     "@types/redux-logger": ^3.0.8
     "@types/remote-redux-devtools": ^0.5.4
+    "@types/webpack": ^4.41.25
     "@types/workbox-build": ^5.0.0
     "@types/workbox-core": ^4.3.0
     "@types/workbox-precaching": ^4.3.0
@@ -7477,7 +7478,7 @@ __metadata:
     eslint-webpack-plugin: ^2.4.1
     favicons-webpack-plugin: ^4.2.0
     file-loader: ^6.2.0
-    fork-ts-checker-webpack-plugin: ^6.0.8
+    fork-ts-checker-webpack-plugin: ^6.1.0
     formik: ^2.2.6
     formik-material-ui: ^3.0.1
     formik-material-ui-lab: ^0.0.8
@@ -7529,7 +7530,11 @@ __metadata:
     workbox-build: ^6.0.2
     workbox-core: ^6.0.2
     workbox-precaching: ^6.0.2
+    workbox-recipes: ^6.0.2
+    workbox-routing: ^6.0.2
+    workbox-strategies: ^6.0.2
     workbox-webpack-plugin: ^6.0.2
+    workbox-window: ^6.0.2
     yup: ^0.32.8
   languageName: unknown
   linkType: soft
@@ -11487,9 +11492,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fork-ts-checker-webpack-plugin@npm:^6.0.8":
-  version: 6.0.8
-  resolution: "fork-ts-checker-webpack-plugin@npm:6.0.8"
+"fork-ts-checker-webpack-plugin@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "fork-ts-checker-webpack-plugin@npm:6.1.0"
   dependencies:
     "@babel/code-frame": ^7.8.3
     "@types/json-schema": ^7.0.5
@@ -11503,7 +11508,7 @@ __metadata:
     schema-utils: 2.7.0
     semver: ^7.3.2
     tapable: ^1.0.0
-  checksum: d9240f7aba9da4072920d1ae551e752b29404df57f8415bcd436d79ad6eaba928f39175a1140cbaaf9430364749498c0a98598031e37701037f06928be4bcff9
+  checksum: 34785a8c0506b8bc0a0da5adfc95dc785e209de85a63f9924c8a47ef743cea5bd481e8d196323e13e671e86e571f34ab98423ff8f5bd3a349da2e8087bb78dc9
   languageName: node
   linkType: hard
 

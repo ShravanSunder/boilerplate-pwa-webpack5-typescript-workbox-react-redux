@@ -1,5 +1,6 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
+const { InjectManifest } = require('workbox-webpack-plugin');
 
 const moduleRules = [
    {
@@ -20,6 +21,11 @@ module.exports = {
    plugins: [
       new Dotenv({
          path: path.resolve(__dirname, '..', './.env.production'),
+      }),
+      new InjectManifest({
+         swSrc: path.resolve(__dirname, '../src/sw.js'),
+         maximumFileSizeToCacheInBytes: 500 * 1000, //500kb
+         exclude: [/node_modules/, /\.test\.tsx?$/, /\.stories\.tsx?$/],
       }),
    ],
    devServer: {

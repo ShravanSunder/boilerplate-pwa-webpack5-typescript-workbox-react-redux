@@ -55,7 +55,10 @@
       "no-use-before-define": "off",
       "spaced-comment": "warn",
       "max-len": 0,
-      "indent": 0
+      "indent": 0,
+      "no-console": 0,
+      "arrow-body-style": 0,
+      "no-multiple-empty-lines": "warn"
    },
    "settings": {
       "react": {

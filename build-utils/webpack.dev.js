@@ -3,11 +3,13 @@ const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const { InjectManifest } = require('workbox-webpack-plugin');
 
 const cache = {
    //type: 'memory',
    type: 'filesystem',
    cacheLocation: path.resolve(__dirname, '.cache'),
+   store: 'pack',
    buildDependencies: {
       // This makes all dependencies of this file - build dependencies
       config: [__filename],
@@ -55,6 +57,11 @@ module.exports = {
          eslint: {
             files: './src/**/*.{ts,tsx,js,jsx}',
          },
+      }),
+      new InjectManifest({
+         swSrc: path.resolve(__dirname, '../src/sw.js'),
+         maximumFileSizeToCacheInBytes: 50 * 1000 * 1000, //50mb,
+         exclude: [/node_modules/, /\.test\.tsx?$/, /\.stories\.tsx?$/],
       }),
    ],
    devServer: {

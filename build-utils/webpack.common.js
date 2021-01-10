@@ -10,8 +10,6 @@ const title = 'Boilerpate-PWA';
 const name = 'Boilerpate-PWA with React|Redux|Workbox';
 const description = 'Boilerpate-PWA';
 const fileExtensions = ['jpg', 'jpeg', 'png', 'gif', 'eot', 'otf', 'svg', 'ttf', 'woff', 'woff2'];
-const { InjectManifest } = require('workbox-webpack-plugin');
-const workboxConfig = require('../workbox-config');
 
 const pwaManifestConfig = {
    name: title,
@@ -69,9 +67,6 @@ module.exports = {
       }),
       new WebpackPwaManifest(pwaManifestConfig),
       new FaviconsWebpackPlugin('assets/icon.png'),
-      new InjectManifest({
-         swSrc: path.resolve(__dirname, '../src/sw.js'),
-      }),
    ],
    output: {
       path: path.resolve(__dirname, '..', 'dist'),
