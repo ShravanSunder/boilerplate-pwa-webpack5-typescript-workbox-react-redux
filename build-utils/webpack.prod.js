@@ -1,6 +1,20 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
+const moduleRules = [
+   {
+      test: /\.(js|jsx|)$/,
+      use: ['babel-loader'],
+      exclude: [/node_modules/, /\.test\.tsx?$/, /\.stories\.tsx?$/],
+   },
+   {
+      test: /\.(ts|tsx)$/,
+      exclude: [/node_modules/, /\.test\.tsx?$/, /\.stories\.tsx?$/],
+      use: ['ts-loader'],
+      options: { transpileOnly: true },
+   },
+];
+
 module.exports = {
    mode: 'production',
    plugins: [
@@ -13,19 +27,7 @@ module.exports = {
    },
    devtool: 'source-map',
    module: {
-      rules: [
-         {
-            test: /\.(js|jsx|)$/,
-            use: ['babel-loader'],
-            exclude: [/node_modules/, /\.test\.tsx?$/, /\.stories\.tsx?$/],
-         },
-         {
-            test: /\.(ts|tsx)$/,
-            exclude: [/node_modules/, /\.test\.tsx?$/, /\.stories\.tsx?$/],
-            use: ['ts-loader'],
-            options: { transpileOnly: true },
-         },
-      ],
+      rules: moduleRules,
    },
    optimization: {
       minimize: true,

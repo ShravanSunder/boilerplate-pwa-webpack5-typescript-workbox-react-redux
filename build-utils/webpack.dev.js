@@ -4,18 +4,44 @@ const Dotenv = require('dotenv-webpack');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
+const cache = {
+   type: 'memory',
+   // type: 'filesystem',
+   //  cacheLocation: path.resolve(__dirname, '.test_cache')
+   // buildDependencies: {
+   //    // This makes all dependencies of this file - build dependencies
+   //    config: [__filename],
+   //    // By default webpack and loaders are build dependencies
+   // },
+};
+
+const moduleRules = [
+   {
+      test: /\.[tj]sx?$/,
+      exclude: [/node_modules/, /\.test\.[tj]sx?$/, /\.stories\.tsx?$/],
+      use: [
+         {
+            loader: require.resolve('babel-loader'),
+            options: {
+               cacheDirectory: true,
+               // ... other options
+               plugins: [
+                  // ... other plugins
+                  require.resolve('react-refresh/babel'),
+               ].filter(Boolean),
+            },
+         },
+         {
+            loader: 'ts-loader',
+            options: { transpileOnly: true },
+         },
+      ],
+   },
+];
+
 module.exports = {
    mode: 'development',
-   cache: {
-      type: 'memory',
-      // type: 'filesystem',
-      //  cacheLocation: path.resolve(__dirname, '.test_cache')
-      // buildDependencies: {
-      //    // This makes all dependencies of this file - build dependencies
-      //    config: [__filename],
-      //    // By default webpack and loaders are build dependencies
-      // },
-   },
+   cache: cache,
    plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new Dotenv({
@@ -37,29 +63,7 @@ module.exports = {
    },
    devtool: 'eval-source-map',
    module: {
-      rules: [
-         {
-            test: /\.[tj]sx?$/,
-            exclude: [/node_modules/, /\.test\.[tj]sx?$/, /\.stories\.tsx?$/],
-            use: [
-               {
-                  loader: require.resolve('babel-loader'),
-                  options: {
-                     cacheDirectory: true,
-                     // ... other options
-                     plugins: [
-                        // ... other plugins
-                        require.resolve('react-refresh/babel'),
-                     ].filter(Boolean),
-                  },
-               },
-               {
-                  loader: 'ts-loader',
-                  options: { transpileOnly: true },
-               },
-            ],
-         },
-      ],
+      rules: moduleRules,
    },
    optimization: {
       minimize: false,
