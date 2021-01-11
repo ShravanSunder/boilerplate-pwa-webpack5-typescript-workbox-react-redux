@@ -7,14 +7,14 @@
       "**/CVS": true,
       "**/.DS_Store": true,
       "**/.cache": true,
-      "**/.vs/": true,
+      "**/.vs": true,
       "**/*.cs": true,
       "**/*.orig": true,
-      "**/bin/": true,
-      "**/build/": true,
-      "**/debug/": true,
-      "**/dist/": true,
-      "**/node_modules/": true,
+      "**/bin": true,
+      "**/build": true,
+      "**/debug": true,
+      "**/dist": true,
+      "**/node_modules": true,
       "**/obj": true,
       ".yarn": true
    },
@@ -29,5 +29,13 @@
 
    "css.validate": false,
    "less.validate": false,
-   "scss.validate": false
+   "scss.validate": false,
+   "tailwindCSS.emmetCompletions": true,
+   "tailwindCSS.includeLanguages": {
+      "plaintext": "javascript",
+      "javascript": "javascript",
+      "HTML": "html",
+      "typescriptreact": "javascript",
+      "javascriptreact": "javascript"
+   }
 }
