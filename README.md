@@ -9,7 +9,6 @@ Setup:
 -  Material-UI
 -  Tailwindcss
 -  Formik
--
 -  yah
 -  Workbox
 -  Jest
