@@ -1,21 +1,22 @@
-# The advanced PWA setup with Webpack5, Babel, React and Typescript .  Uses yarn2.  
+# The advanced PWA setup with Webpack5, Babel, React and Typescript . Uses yarn2.
 
 Setup:
-- React 
-- Redux
-- ReduxToolkit
-- RxJs
-- Material-UI
-- Tailwindcss
-- Formik
-- yah
-- Workbox
-- Jest
-- Storybook with addons
-- Yarn
-- Webpack w/ fork typescript
-- full eslint linting and integration with webpack
 
+-  React
+-  Redux
+-  ReduxToolkit
+-  RxJs
+-  Material-UI
+-  Tailwindcss
+-  Formik
+-
+-  yah
+-  Workbox
+-  Jest
+-  Storybook with addons
+-  Yarn
+-  Webpack w/ fork typescript
+-  full eslint linting and integration with webpack
 
 ## Installation
 
